@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   <title>Fiches-IDE : L'app'</title>
+   <link rel="stylesheet" href="../build/css/framework7.ios.css">
+   <link rel="stylesheet" href="../build/css/framework7.ios.colors.css">
+   <link rel="stylesheet" href="../build/css/my-app.css">
+   <link rel="stylesheet" href="css/kitchen-sink.css">
+   <link rel="icon" href="img/icon.png">
+   <link rel="apple-touch-icon" href="img/icon.png">
+      <script>
+   window.onload=function(){
+var downloadButton = document.getElementById("download");
+var counter = 10;
+var newElement = document.createElement("p");
+newElement.innerHTML = "You can download the file in 10 seconds.";
+var id;
+
+downloadButton.parentNode.replaceChild(newElement, downloadButton);
+
+id = setInterval(function() {
+    counter--;
+    if(counter < 0) {
+        newElement.parentNode.replaceChild(downloadButton, newElement);
+        clearInterval(id);
+    } else {
+        newElement.innerHTML = "You can download the file in " + counter.toString() + " seconds.";
+    }
+}, 1000);
+
+}//]]> 
+</script>
+</head>
+<body class="layout-dark theme-white">
+   <div class="statusbar-overlay"></div>
+   <div class="panel-overlay"></div>
+   <div class="panel panel-left panel-cover layout-dark">
+      <div class="content-block-title">Menu</div>
+      <div class="list-block">
+         <ul>
+            <li>
+               <a href="billets.html" class="item-link close-panel">
+                  <div class="item-content">
+                     <div class="item-media">
+                        <i class="icon latmenu_billets"></i>
+                     </div>
+                     <div class="item-inner">
+                        <div class="item-title">Billets</div>
+                     </div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a href="medicaments.html" class="item-link close-panel">
+                  <div class="item-content">
+                     <div class="item-media">
+                        <i class="icon latmenu_compte"></i>
+                     </div>
+                     <div class="item-inner">
+                        <div class="item-title">Mon compte</div>
+                     </div>
+                  </div>
+               </a>
+            </li>
+           <li>
+            <li>
+               <a href="index.html" class="item-link close-panel">
+                  <div class="item-content">
+                     <div class="item-media"><i class="icon latmenu_deco"></i></div>
+                     <div class="item-inner">
+                        <div class="item-title">Déconnexion</div>
+                     </div>
+                  </div>
+               </a>
+            </li>
+                <a  href="http://facebook.com" target="system" class="item-link close-panel external link">
+                   <div class="item-content">
+                     <div class="item-media"><i class="icon latmenu_facebook"></i></div>
+                     <div class="item-inner">
+                        <div class="item-title">Facebook</div>
+                     </div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a  href="http://twitter.com" target="system" class="item-link close-panel external link">
+                  <div class="item-content">
+                     <div class="item-media"><i class="icon latmenu_twitter"></i></div>
+                     <div class="item-inner">
+                        <div class="item-title">Twitter</div>
+                     </div>
+                  </div>
+               </a>
+            </li>
+            
+         </ul>
+      </div>
+   </div>
+   <div class="views">
+      <div class="view view-main">
+         <div class="navbar">
+            <div class="navbar-inner">
+               <div class="center sliding"><img src="logo.png" width="70px"></div>
+
+               <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+            </div>
+         </div>
+         <!--  toolbar-through à rajouter dans la div, sa suppression permet d'éviter d'avoir un scroll sur la page-->
+         <div class="pages navbar-through ">
+            <div data-page="index" class="page">
+               <div class="page-content">
+                  <div class="ks-grid">
+                     <div class="content-block-perso" style="background-color:#FFFFFF">
+                        <div class="row">
+                           <!-- BILLETS -->
+                           <a href="billets.html" class="button-carre col-66" style="float:left;clear: both; height:230px;background-color:#faeda5;margin-bottom:2px" >
+                              <span style="position: relative;top: 21%; color:#333333; font-size:18px">MES BILLETS  <br><br>  <img src="tickets.png" width="90px"></span>
+
+                           </a>
+                           <div class="col-35" style="background-color:#f0f0f0">
+                              <!-- FB -->
+                              <a href="http://facebook.com" target="system" class="button-carre external link" style="height:114px;background-color:#3b5998">
+                                 <span style="position: relative;top: 25%; color:#333333; font-size:28px"><img src="../build/img/4.png" alt="Smiley face" height="70" width="70"></span>
+                              </a>
+                              <!-- Separateur -->
+                              <div style="background-color:#f0f0f0; height:2px"></div>
+                              <!-- TWITTER -->
+                              <a href="http://twitter.com" target="system" class="button-carre external link" style="height:114px;background-color:#5ea9db;margin-bottom:0   px">
+                                 <span style="position: relative;top:5%;color:#333333; font-size:28px"><img src="../build/img/cuicui.png" alt="Smiley face" height="100" width="100"></span>
+                              </a>
+                           </div>
+
+                           <!-- Vocabulaire -->
+                           <a href="vocabulaire.html" class="button-carre col-100" style="height:163px;background-color:#333333; margin-bottom:2px">
+                              <span style="position: relative;top: 10%; color:#faeda5; font-size:18px;font-weight: normal;">MON COMPTE<br> <img style="position:relative;top:20px;" src="compte.png" width="70px"></span>
+
+                           </a>
+                           <!-- S'entrainer -->
+                           <a href="index.html" class="button-carre col-100" style="height:60px;background-color:#ed3e41;margin-bottom:2px">
+                              <span style="position: relative;top: 30%; color:#FFFFFF; font-size:18px">DECONNEXION</span>
+                               <a href="downloadFile.zip" id="download" class="button">Download the file...</a>
+
+                           </a>
+
+
+                        </div>
+                     </div>
+                  </div>
+                  <a class="external link" target="system" href="http://www.mcdonalds.ca/ca/fr.html"><img src="pub.gif" height="40px" width="100%"></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script type="text/javascript" src="../build/js/framework7.js"></script>
+   <script type="text/javascript" src="js/kitchen-sink.js"></script>
+</body>
+</html>
